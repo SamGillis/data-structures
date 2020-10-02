@@ -14,11 +14,14 @@ def all_houses(filename):
     Return:
       - set[str]: a set of strings
     """
-
     houses = set()
-
-    # TODO: replace this with your code
-
+    file_cohort = open(filename)
+    for line in file_cohort:
+      line = line.rstrip()
+      words = line.split('|')
+      house = words[2]
+      houses.add(house)
+    file_cohort.close()
     return houses
 
 
